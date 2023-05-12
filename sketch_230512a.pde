@@ -17,6 +17,8 @@ void keyPressed() {
     sortVisualizer.toggleBubbleSort();
   } else if (key == '2') {
     sortVisualizer.toggleQuickSort();
+  } else if (key == 'r' || key == 'R') {
+    
   }
 }
 
