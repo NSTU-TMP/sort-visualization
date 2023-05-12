@@ -11,9 +11,9 @@ abstract public class ASort {
     }
 
     public ASort(int[] array) {
-        i = 0;
-        j = 0;
-        isSorted = false;
+        this.i = 0;
+        this.j = 0;
+        this.isSorted = false;
         this.array = new int[array.length];
         arrayCopy(array, this.array, array.length);
     }

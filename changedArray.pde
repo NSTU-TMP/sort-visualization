@@ -5,7 +5,7 @@ class ChangedArray {
 
     public ChangedArray(int[] array, int index_1, int index_2) {
         this.array = array;
-        swaped_element_index_1 = index_1;
-        swaped_element_index_2 = index_2;
+        this.swaped_element_index_1 = index_1;
+        this.swaped_element_index_2 = index_2;
     }
 }

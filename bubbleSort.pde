@@ -4,23 +4,28 @@ class BubbleSort extends ASort implements ISort  {
     }
 
     public ChangedArray NextSortStep() {
-        if (isSorted) {
+        if (this.isSorted) {
             return null;
         }
 
-        for (; i < array.length - 1; i = i + 1) {
-            for (; j < array.length - i - 1; j = j + 1) {
-                if (array[j] > array[j + 1]) {
+        for (; this.i < this.array.length - 1; this.i = this.i + 1) {
+            for (; this.j < this.array.length - this.i - 1; this.j = this.j + 1) {
+                if (this.array[this.j] > this.array[this.j + 1]) {
                     Swap(j);
-                    return new ChangedArray(array, j - 1, j);
+                    j = j + 1;
+                    return new ChangedArray(array, this.j -1 , this.j);
                 }    
             }
 
-            j = 0;
+            this.j = 0;
         }
 
-        isSorted = true;
+        this.isSorted = true;
     
-        return new ChangedArray(array, 0, 0);
+        return new ChangedArray(this.array, this.j -1, this.j);
+    }
+    
+    public ChangedArray GetArray(){
+      return new ChangedArray(this.array, -1, -1);
     }
 }
