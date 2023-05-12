@@ -2,9 +2,9 @@ SortVisualizer sortVisualizer;
 
 void setup() {
   size(1080, 720);
-  BubbleSort bs = new BubbleSort(generateArray(width));
+  QuickSort bs = new QuickSort(generateArray(100));
   sortVisualizer = new SortVisualizer(bs);
-  frameRate(250);
+  frameRate(30);
 }
 
 void draw() {
@@ -43,6 +43,7 @@ class SortVisualizer {
       counter = counter + 1;
       this.drawArray(this.changedArray);
       this.changedArray = sorter.NextSortStep();
+      // delay(10);
     }
   }
   
@@ -54,7 +55,7 @@ class SortVisualizer {
            stroke(255, 0, 0);
         } 
 
-        line(10 + i * this.horizontalBias, height,10 + i * this.horizontalBias, height - changedArray.array[i]);
+        line(i * this.horizontalBias, height,i * this.horizontalBias, height - changedArray.array[i]);
       }
   }
 }
