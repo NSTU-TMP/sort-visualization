@@ -35,10 +35,7 @@ class SortingCanvas {
         }
     }
     sortAndDraw() {
-        // console.log(this.#values);
-        console.log(this);
         window[this.#sort_and_draw](this.#values, this.#canvas, this.#draw_array_func_reference);
-        // console.log(this.#values);
         SortingCanvas.drawValues(this.#values, this.#canvas);
     }
 

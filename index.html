@@ -11,6 +11,8 @@
     <script src="script.js"></script>
     <script src="bubbleSort.js"></script>
     <script src="quickSort.js"></script>
+    <script src="heapSort.js"></script>
+    <script src="mergeSort.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.6.3.js"
         integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
@@ -191,6 +193,17 @@
             <div class="col-4"></div>
             <h1 class="title-square text-center col-4">Сортировка кучей </h1>
         </div>
+        <div class="row ">
+            <canvas id="heapSort" class="sortVisualizer"></canvas>
+        </div>
+        <div class="row ">
+            <div class="col-6">
+                <button onclick="startSortVisualization('heapSort')">Начать визуализацию</button>
+            </div>
+            <div class="col-6">
+                <button onclick="resetSortVisualization('heapSort')">Сбросить</button>
+            </div>
+        </div>
     </div>
 
     <a name="mergeSort"></a>
@@ -198,6 +211,17 @@
         <div class="row">
             <div class="col-4"></div>
             <h1 class="title-square text-center col-4">Сортировка слиянием </h1>
+        </div>
+        <div class="row ">
+            <canvas id="mergeSort" class="sortVisualizer"></canvas>
+        </div>
+        <div class="row ">
+            <div class="col-6">
+                <button onclick="startSortVisualization('mergeSort')">Начать визуализацию</button>
+            </div>
+            <div class="col-6">
+                <button onclick="resetSortVisualization('mergeSort')">Сбросить</button>
+            </div>
         </div>
     </div>
 
