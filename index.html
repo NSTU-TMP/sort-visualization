@@ -10,6 +10,7 @@
 
     <script src="script.js"></script>
     <script src="bubbleSort.js"></script>
+    <script src="quickSort.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.6.3.js"
         integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
@@ -72,6 +73,7 @@
             <h1 class=" title-square col-4" style="background-color: rgba(174, 178, 245, 0.8);">Визуализация сортировок
             </h1>
         </div>
+
 
         <div class="row">
             <div class=" title-square col-md-8" style="background-color: rgba(81, 96, 109, 0.8); ">
@@ -142,20 +144,20 @@
 
 
     <a name="bubbleSort"></a>
-    <div class="container-fluid">
-        <div class="bg-dark row">
+    <div class="bg-dark container-fluid">
+        <div class="row">
             <div class="col-4"></div>
             <h1 class="title-square text-center col-4"> Сортировка пузырьком </h1>
         </div>
         <div class="row ">
-            <div id="bubbleSort" class="sortVisualizer"></div>
+            <canvas id="bubbleSort" class="sortVisualizer"></canvas>
         </div>
         <div class="row ">
             <div class="col-6">
-                <button id="bubbleSort" onclick="startSortVisualization(this.id)">Начать визуализацию</button>
+                <button onclick="startSortVisualization('bubbleSort')">Начать визуализацию</button>
             </div>
             <div class="col-6">
-                <button id="bubbleSort" onclick="resetSortVisualization(this.id)">Сбросить</button>
+                <button onclick="resetSortVisualization('bubbleSort')">Сбросить</button>
             </div>
         </div>
     </div>
@@ -171,14 +173,14 @@
             <h1 class="title-square text-center col-4"> Быстрая сортировка </h1>
         </div>
         <div class="row ">
-            <div id="quickSort" class="sortVisualizer"></div>
+            <canvas id="quickSort" class="sortVisualizer"></canvas>
         </div>
         <div class="row ">
             <div class="col-6">
-                <button id="quickSort" onclick="startSortVisualization(this.id)">Начать визуализацию</button>
+                <button onclick="startSortVisualization('quickSort')">Начать визуализацию</button>
             </div>
             <div class="col-6">
-                <button id="quickSort" onclick="resetSortVisualization(this.id)">Сбросить</button>
+                <button onclick="resetSortVisualization('quickSort')">Сбросить</button>
             </div>
         </div>
     </div>
@@ -197,9 +199,6 @@
             <div class="col-4"></div>
             <h1 class="title-square text-center col-4">Сортировка слиянием </h1>
         </div>
-        <!-- <div class="row">
-            <div id="mergeSortCanvas" class="sortVisualizer"></div>
-        </div> -->
     </div>
 
     <!-- <br> TEMP!! -->

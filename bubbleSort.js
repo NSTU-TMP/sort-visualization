@@ -1,5 +1,4 @@
 window["bubbleSort"] = async function bubbleSort(values, drawingCanwas, drawValuesFunc, sleepTimeMS) {
-
     let sleepTime = 0;
     if (typeof (sleepTimeMS) != "undefined") {
         sleepTime = sleepTimeMS;
@@ -19,6 +18,3 @@ window["bubbleSort"] = async function bubbleSort(values, drawingCanwas, drawValu
 
     }
 };
-
-
-
