@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <script src="script.js"></script>
+    <script src="bubbleSort.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.6.3.js"
         integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
@@ -147,24 +148,21 @@
             <h1 class="title-square text-center col-4"> Сортировка пузырьком </h1>
         </div>
         <div class="row ">
-            <div id="bubbleSortCanvas"></div>
+            <div id="bubbleSort" class="sortVisualizer"></div>
+        </div>
+        <div class="row ">
+            <div class="col-6">
+                <button id="bubbleSort" onclick="startSortVisualization(this.id)">Начать визуализацию</button>
+            </div>
+            <div class="col-6">
+                <button id="bubbleSort" onclick="resetSortVisualization(this.id)">Сбросить</button>
+            </div>
         </div>
     </div>
 
 
     <div>
-        <button onclick="startVisualization()">Начать визуализацию</button>
-        <button onclick="resetVisualization()">Сбросить</button>
-        <br />
-        <!-- <canvas></canvas>
-        <script>
-            // Инициализация и запуск p5.js
-            new p5();
-        </script> -->
     </div>
-
-    <!-- <br> TEMP!! -->
-    <br>
 
     <a name="quickSort"></a>
     <div class="bg-dark container-fluid">
@@ -172,9 +170,18 @@
             <div class="col-4"></div>
             <h1 class="title-square text-center col-4"> Быстрая сортировка </h1>
         </div>
+        <div class="row ">
+            <div id="quickSort" class="sortVisualizer"></div>
+        </div>
+        <div class="row ">
+            <div class="col-6">
+                <button id="quickSort" onclick="startSortVisualization(this.id)">Начать визуализацию</button>
+            </div>
+            <div class="col-6">
+                <button id="quickSort" onclick="resetSortVisualization(this.id)">Сбросить</button>
+            </div>
+        </div>
     </div>
-    <!-- <br> TEMP!! -->
-    <br>
 
     <a name="heapSort"></a>
     <div class="bg-dark container-fluid">
@@ -184,15 +191,15 @@
         </div>
     </div>
 
-    <!-- <br> TEMP!! -->
-    <br>
-
     <a name="mergeSort"></a>
     <div class="bg-dark container-fluid">
         <div class="row">
             <div class="col-4"></div>
             <h1 class="title-square text-center col-4">Сортировка слиянием </h1>
         </div>
+        <!-- <div class="row">
+            <div id="mergeSortCanvas" class="sortVisualizer"></div>
+        </div> -->
     </div>
 
     <!-- <br> TEMP!! -->
