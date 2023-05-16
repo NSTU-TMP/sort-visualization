@@ -1,5 +1,5 @@
 window["quickSort"] = async function quickSort(values, drawingCanvas, drawValuesFunc, sleepTimeMS = 50) {
-    let sleepTime = 40;
+    let sleepTime = 50;
     if (typeof sleepTimeMS !== "undefined") {
         sleepTime = sleepTimeMS;
     }

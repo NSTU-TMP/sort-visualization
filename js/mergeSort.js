@@ -1,5 +1,5 @@
 window["mergeSort"] = async function mergeSort(values, drawingCanvas, drawValuesFunc, sleepTimeMS = 50) {
-    let sleepTime = 15;
+    let sleepTime = 50;
 
     if (typeof sleepTimeMS !== "undefined") {
         sleepTime = sleepTimeMS;

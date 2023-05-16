@@ -65,7 +65,7 @@
         </div>
     </nav>
 
-    <div class="block-hello container-fluid">
+    <div class="block-about container-fluid">
         <br />
         <div class="row">
             <h1 class=" title-square col-7" style="background-color: rgba(124, 163, 187, 0.8);">Расчетное графическое
@@ -88,15 +88,14 @@
                 <h5>
                     Хромин Сергей Константинови
                     <br>
-                    Пронько Артем Выячеславович
+                    Пронько Артем Вячеславович
                     <br>
                     Чуриков Данил Игоревич
                     <br>
+                    Кашаев Аскер Муратович
                 </h5>
             </div>
-
         </div>
-        <br />
     </div>
 
     <a name="about"></a>
@@ -129,21 +128,47 @@
     </div>
 
     <a name="Sort"></a>
-    <div class="container-fluid ">
-        <div class="row justify-content-center">
-            <div class="col-5">
-                <p>
+    <div class="container ">
+        <div class="row justify-content-start">
+            <div class="col-lg-5 col-10">
+                <h3>
                     Время
-                </p>
+                </h3>
                 <h5>
                     — основной параметр, характеризующий быстродействие алгоритма. Называется также вычислительной
-                    сложностью. Для упорядочения важны худшее, среднее и лучшее поведение алгоритма в терминах мощности
+                    сложностью. Для упорядочения важны худшее, среднее и лучшее поведение алгоритма в терминах
+                    мощности
                     входного множества A.
                 </h5>
             </div>
 
-            <div class="col-1"></div>
-            <div class="col-5"></div>
+            <!-- <div class="col-1"></div>
+            <div class="col-5"></div> -->
+        </div>
+    </div>
+
+    <div class="bg-dark container-fluid">
+        <div class="row">
+            <div class="col-4"></div>
+            <h1 class="title-square text-center col-4">Всё и сразу!</h1>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row ">
+            <div class="col-sm-6 col-md-3 my-1">
+                <button type="button" class="btn btn-light" onclick="startAllSortVisualization()">Начать
+                    визуализацию</button>
+            </div>
+            <div class="col-sm-6 col-md-3 my-1">
+                <button type="button" class="btn btn-light" onclick="resetAllAndFillSameData()">Перезаполнить
+                    одинаковыми данными</button>
+            </div>
+            <div class="col-sm-6 col-md-3 my-1">
+                <button type="button" class="btn btn-light" onclick="stopAllSortVisualization()">Остановить</button>
+            </div>
+            <div class="col-sm-6 col-md-3 my-1">
+                <button type="button" class="btn btn-light" onclick="continueAllSortVisualization()">Продолжить</button>
+            </div>
         </div>
     </div>
 
@@ -215,6 +240,7 @@
             </div>
         </div>
     </div>
+
 
     <a name="heapSort"></a>
     <div class="bg-dark container-fluid">

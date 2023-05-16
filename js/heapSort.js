@@ -1,5 +1,5 @@
 window["heapSort"] = async function heapSort(values, drawingCanwas, drawValuesFunc, sleepTimeMS = 50) {
-    let sleepTime = 25;
+    let sleepTime = 50;
     if (typeof sleepTimeMS !== "undefined") {
         sleepTime = sleepTimeMS;
     }
