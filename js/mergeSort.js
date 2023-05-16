@@ -1,10 +1,12 @@
-window["mergeSort"] = async function mergeSort(values, drawingCanwas, drawValuesFunc, sleepTimeMS) {
+window["mergeSort"] = async function mergeSort(values, drawingCanvas, drawValuesFunc, sleepTimeMS = 50) {
     let sleepTime = 15;
+
     if (typeof sleepTimeMS !== "undefined") {
         sleepTime = sleepTimeMS;
     }
 
     async function merge(arr, left, mid, right) {
+
         const n1 = mid - left + 1;
         const n2 = right - mid;
 
@@ -30,14 +32,14 @@ window["mergeSort"] = async function mergeSort(values, drawingCanwas, drawValues
                 arr[k] = R[j];
                 j++;
             }
-            drawValuesFunc(arr, drawingCanwas, k);
+            drawValuesFunc(arr, drawingCanvas, k);
             await sleep(sleepTime);
             k++;
         }
 
         while (i < n1) {
             arr[k] = L[i];
-            drawValuesFunc(arr, drawingCanwas, k);
+            drawValuesFunc(arr, drawingCanvas, k);
             await sleep(sleepTime);
             i++;
             k++;
@@ -45,7 +47,7 @@ window["mergeSort"] = async function mergeSort(values, drawingCanwas, drawValues
 
         while (j < n2) {
             arr[k] = R[j];
-            drawValuesFunc(arr, drawingCanwas, k);
+            drawValuesFunc(arr, drawingCanvas, k);
             await sleep(sleepTime);
             j++;
             k++;
@@ -54,12 +56,23 @@ window["mergeSort"] = async function mergeSort(values, drawingCanwas, drawValues
 
     async function mergeSortUtil(arr, left, right) {
         if (left < right) {
+            if (window.mergeSort.is_sort_stopped == true) {
+                return;
+            }
             const mid = Math.floor((left + right) / 2);
 
-            await mergeSortUtil(arr, left, mid);
-            await mergeSortUtil(arr, mid + 1, right);
-
-            await merge(arr, left, mid, right);
+            if (!window.mergeSort.is_sort_stopped) {
+                await mergeSortUtil(arr, left, mid);
+            }
+            if (!window.mergeSort.is_sort_stopped) {
+                await mergeSortUtil(arr, mid + 1, right);
+            }
+            if (!window.mergeSort.is_sort_stopped) {
+                await merge(arr, left, mid, right);
+            }
+            if (!window.mergeSort.is_sort_stopped) {
+                await merge(arr, left, mid, right);
+            }
         }
     }
 

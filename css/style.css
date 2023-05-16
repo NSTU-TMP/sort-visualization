@@ -1,14 +1,5 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css");
 
-
-
-
-
-
-.show {
-    display: block;
-}
-
 .square {
     color: white;
     padding: 5px;
@@ -86,11 +77,6 @@
         font-weight: 550;
     }
 
-    .my-code {
-        font-size: calc(18px + (18 - 14) * ((100vw - 480px) / (1024 - 480)));
-        font-weight: 475;
-    }
-
     .sub-title {
         font-size: calc(20px + 5 * ((100vw - 550px) / (1024 - 550)));
     }
@@ -100,36 +86,8 @@
 
     }
 
-
-
 }
 
-@media screen and (max-width: 300px) {
-
-    h1 {
-        font-size: calc(22px + (18 - 14) * ((100vw - 480px) / (1024 - 300)));
-    }
-
-    h4 {
-        font-size: calc(18px + (18 - 14) * ((100vw - 480px) / (1024 - 300)));
-    }
-
-    .sub-title {
-        font-size: calc(17px + (18 - 14) * ((100vw - 480px) / (1024 - 480)));
-    }
-
-    .title {
-        font-size: calc(19px + 5 * ((100vw - 550px) / (1024 - 550)));
-
-    }
-
-
-
-}
-
-.material-icons.orange600 {
-    color: #ff8c00;
-}
 
 .bg-dark {
     background-color: rgb(55, 60, 66);
@@ -152,9 +110,6 @@
     margin-right: 5%;
 }
 
-.block-hello {
-    width: 100%;
-}
 
 .block-projects-struct {
     width: 100%;

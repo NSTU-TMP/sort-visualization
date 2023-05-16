@@ -1,4 +1,4 @@
-window["quickSort"] = async function quickSort(values, drawingCanvas, drawValuesFunc, sleepTimeMS) {
+window["quickSort"] = async function quickSort(values, drawingCanvas, drawValuesFunc, sleepTimeMS = 50) {
     let sleepTime = 40;
     if (typeof sleepTimeMS !== "undefined") {
         sleepTime = sleepTimeMS;
@@ -9,15 +9,19 @@ window["quickSort"] = async function quickSort(values, drawingCanvas, drawValues
     }
 
     async function qSort(values, start, end) {
-        if (start >= end) {
+        if (start >= end || window.quickSort.is_sort_stopped) {
             return;
         }
+
         let index = await partition(values, start, end);
         states[index] = -1;
 
+        if (window.quickSort.is_sort_stopped) {
+            return;
+        }
         await Promise.all([
-            qSort(values, start, index - 1),
-            qSort(values, index + 1, end)
+            await qSort(values, start, index - 1),
+            await qSort(values, index + 1, end)
         ]);
 
 
@@ -33,6 +37,9 @@ window["quickSort"] = async function quickSort(values, drawingCanvas, drawValues
         states[pivotIndex] = 0;
         for (let i = start; i < end; i++) {
             if (values[i] < pivotValue) {
+                if (window.quickSort.is_sort_stopped) {
+                    return;
+                }
                 await swap(values, i, pivotIndex);
                 await sleep(sleepTime);
                 drawValuesFunc(values, drawingCanvas, i, pivotIndex);
@@ -41,6 +48,9 @@ window["quickSort"] = async function quickSort(values, drawingCanvas, drawValues
                 pivotIndex++;
                 states[pivotIndex] = 0;
             }
+        }
+        if (window.quickSort.is_sort_stopped) {
+            return;
         }
         await swap(values, pivotIndex, end);
         await sleep(sleepTime);
@@ -60,9 +70,6 @@ window["quickSort"] = async function quickSort(values, drawingCanvas, drawValues
         values[a] = values[b];
         values[b] = temp;
     }
-
-
-
 
     qSort(values, 0, values.length - 1);
 }

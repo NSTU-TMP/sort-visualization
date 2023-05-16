@@ -1,10 +1,14 @@
-window["bubbleSort"] = async function bubbleSort(values, drawingCanwas, drawValuesFunc, sleepTimeMS) {
+window["bubbleSort"] = async function bubbleSort(values, drawingCanwas, drawValuesFunc, sleepTimeMS = 50) {
     let sleepTime = 0;
+
     if (typeof (sleepTimeMS) != "undefined") {
         sleepTime = sleepTimeMS;
     }
     for (let i = 0; i < values.length; i++) {
         for (let j = 0; j < values.length - i - 1; j++) {
+            if (window.bubbleSort.is_sort_stopped) {
+                return;
+            }
             let a = values[j];
             let b = values[j + 1];
             if (values[j] > values[j + 1]) {

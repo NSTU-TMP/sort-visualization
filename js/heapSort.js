@@ -1,4 +1,4 @@
-window["heapSort"] = async function heapSort(values, drawingCanwas, drawValuesFunc, sleepTimeMS) {
+window["heapSort"] = async function heapSort(values, drawingCanwas, drawValuesFunc, sleepTimeMS = 50) {
     let sleepTime = 25;
     if (typeof sleepTimeMS !== "undefined") {
         sleepTime = sleepTimeMS;
@@ -24,13 +24,18 @@ window["heapSort"] = async function heapSort(values, drawingCanwas, drawValuesFu
 
             drawValuesFunc(arr, drawingCanwas, i, largest);
             await sleep(sleepTime);
-
+            if (window.heapSort.is_sort_stopped) {
+                return;
+            }
             await heapify(arr, n, largest);
         }
     }
 
     async function buildHeap(arr, n) {
         for (let i = Math.floor(n / 2) - 1; i >= 0; i--) {
+            if (window.heapSort.is_sort_stopped) {
+                return;
+            }
             await heapify(arr, n, i);
         }
     }
@@ -47,7 +52,9 @@ window["heapSort"] = async function heapSort(values, drawingCanwas, drawValuesFu
 
             drawValuesFunc(arr, drawingCanwas, 0, i);
             await sleep(sleepTime);
-
+            if (window.heapSort.is_sort_stopped) {
+                return;
+            }
             await heapify(arr, i, 0);
         }
     }

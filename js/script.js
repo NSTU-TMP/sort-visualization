@@ -4,25 +4,28 @@ class SortingCanvas {
     #values;
     #draw_array_func_reference
     #parent_id
+    #delayTimeMS
 
     getParentId() {
         return this.#parent_id;
     }
 
-    constructor(canvas, parent_id, sort_function_name, values_array) {
+    constructor(canvas, parent_id, sort_function_name, values_array, delayTimeMS = 50) {
         this.#parent_id = parent_id;
         this.#canvas = canvas;
         this.#sort_and_draw = sort_function_name;
         this.#values = values_array;
-        this.#draw_array_func_reference = SortingCanvas.drawValues;
+        this.#draw_array_func_reference = this.drawValues;
+        this.#delayTimeMS = delayTimeMS;
         this.reset();
     }
 
-    static drawValues(array, canvas, redValueIndex_1, redValueIndex_2) {
+    drawValues(array, canvas, redValueIndex_1, redValueIndex_2) {
         const canvasContext = canvas.getContext('2d');
         canvasContext.fillRect(0, 0, canvas.width, canvas.height);
         canvasContext.lineWidth = 1;
-        for (let i = 0; i < array.length; i++) {
+        let i = 0;
+        for (i = 0; i < array.length; i++) {
             canvasContext.strokeStyle = 'white';
 
             if (i == redValueIndex_1 || i == redValueIndex_2) {
@@ -35,22 +38,30 @@ class SortingCanvas {
         }
     }
     sortAndDraw() {
-        window[this.#sort_and_draw](this.#values, this.#canvas, this.#draw_array_func_reference);
-        SortingCanvas.drawValues(this.#values, this.#canvas);
+        window[this.#parent_id].is_sort_stopped = false;
+        window[this.#sort_and_draw](this.#values, this.#canvas, this.#draw_array_func_reference, this.#delayTimeMS);
+        this.drawValues(this.#values, this.#canvas);
+    }
+    stopSortVisualization() {
+        window[this.#parent_id].is_sort_stopped = true;
+    }
+
+    continueSortVisualization() {
+        this.sortAndDraw()
     }
 
     reset() {
-        if (typeof (this.#values) == "undefined") {
+        this.stopSortVisualization();
+        if (typeof (this.#values) === "undefined") {
             this.#values = generateArray(this.#canvas.width, this.#canvas.height);
         } else {
             this.#values = generateArray(this.#values.length, this.#canvas.height);
         }
-        SortingCanvas.drawValues(this.#values, this.#canvas);
+        this.drawValues(this.#values, this.#canvas);
     }
 }
 
 let canvasArray = [];
-let isSorting = [];
 
 function setup() {
 
@@ -92,6 +103,21 @@ function resetSortVisualization(canvas_parent_id) {
         canvasArray[index].reset();
     }
 }
+
+function stopSortVisualization(canvas_parent_id) {
+    let index = this.findCanvasIndexByParentId(canvas_parent_id);
+    if (index >= 0) {
+        canvasArray[index].stopSortVisualization();
+    }
+}
+
+function continueSortVisualization(canvas_parent_id) {
+    let index = this.findCanvasIndexByParentId(canvas_parent_id);
+    if (index >= 0) {
+        canvasArray[index].continueSortVisualization();
+    }
+}
+
 
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));

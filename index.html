@@ -68,12 +68,14 @@
     <div class="block-hello container-fluid">
         <br />
         <div class="row">
-            <h1 class=" title-square col-4" style="background-color: rgba(124, 163, 187, 0.8);">Расчетное графическое
+            <h1 class=" title-square col-7" style="background-color: rgba(124, 163, 187, 0.8);">Расчетное графическое
                 задание
             </h1>
-            <div class="col-2"></div>
-            <h1 class=" title-square col-4" style="background-color: rgba(174, 178, 245, 0.8);">Визуализация сортировок
-            </h1>
+
+        </div>
+        <div class="row">
+            <h3 class=" title-square col-10" style="background-color: rgba(174, 178, 245, 0.8);">Визуализация сортировок
+            </h3>
         </div>
 
 
@@ -107,11 +109,12 @@
         <br>
         <div class="row justify-content-center ">
             <img src="images/about_sort.png" class="col-5" style="max-height: 800px; width: auto;">
-            <div class=" col-lg-4 col-8">
-                <p>
+            <div class=" col-lg-4 col-12">
+                <h5>
+                    <br>
                     Сортировка - это процесс упорядочивания наборов данных одного типа по возрастанию или убыванию
                     значения какого-либо признака.
-                </p>
+                </h5>
             </div>
         </div>
 
@@ -155,18 +158,34 @@
             <canvas id="bubbleSort" class="sortVisualizer"></canvas>
         </div>
         <div class="row ">
-            <div class="col-6">
-                <button onclick="startSortVisualization('bubbleSort')">Начать визуализацию</button>
+            <div class="col-sm-6 col-md-3 my-1">
+                <button type="button" class="btn btn-light" onclick="startSortVisualization('bubbleSort')">Начать
+                    визуализацию</button>
             </div>
-            <div class="col-6">
-                <button onclick="resetSortVisualization('bubbleSort')">Сбросить</button>
+            <div class="col-sm-6 col-md-3 my-1">
+                <button type="button" class="btn btn-light"
+                    onclick="resetSortVisualization('bubbleSort')">Сбросить</button>
+            </div>
+            <div class="col-sm-6 col-md-3 my-1">
+                <button type="button" class="btn btn-light"
+                    onclick="stopSortVisualization('bubbleSort')">Остановить</button>
+            </div>
+            <div class="col-sm-6 col-md-3 my-1">
+                <button type="button" class="btn btn-light"
+                    onclick="continueSortVisualization('bubbleSort')">Продолжить</button>
             </div>
         </div>
     </div>
+    <!-- <div class="container-fluid">
+        <div class="row">
+            <br>
+            <br>
+            <br>
+        </div>
+    </div> -->
 
 
-    <div>
-    </div>
+
 
     <a name="quickSort"></a>
     <div class="bg-dark container-fluid">
@@ -178,11 +197,21 @@
             <canvas id="quickSort" class="sortVisualizer"></canvas>
         </div>
         <div class="row ">
-            <div class="col-6">
-                <button onclick="startSortVisualization('quickSort')">Начать визуализацию</button>
+            <div class="col-sm-6 col-md-3 my-1">
+                <button type="button" class="btn btn-light" onclick="startSortVisualization('quickSort')">Начать
+                    визуализацию</button>
             </div>
-            <div class="col-6">
-                <button onclick="resetSortVisualization('quickSort')">Сбросить</button>
+            <div class="col-sm-6 col-md-3 my-1">
+                <button type="button" class="btn btn-light"
+                    onclick="resetSortVisualization('quickSort')">Сбросить</button>
+            </div>
+            <div class="col-sm-6 col-md-3 my-1">
+                <button type="button" class="btn btn-light"
+                    onclick="stopSortVisualization('quickSort')">Остановить</button>
+            </div>
+            <div class="col-sm-6 col-md-3 my-1">
+                <button type="button" class="btn btn-light"
+                    onclick="continueSortVisualization('quickSort')">Продолжить</button>
             </div>
         </div>
     </div>
@@ -197,11 +226,21 @@
             <canvas id="heapSort" class="sortVisualizer"></canvas>
         </div>
         <div class="row ">
-            <div class="col-6">
-                <button onclick="startSortVisualization('heapSort')">Начать визуализацию</button>
+            <div class="col-sm-6 col-md-3 my-1">
+                <button type="button" class="btn btn-light" onclick="startSortVisualization('heapSort')">Начать
+                    визуализацию</button>
             </div>
-            <div class="col-6">
-                <button onclick="resetSortVisualization('heapSort')">Сбросить</button>
+            <div class="col-sm-6 col-md-3 my-1">
+                <button type="button" class="btn btn-light"
+                    onclick="resetSortVisualization('heapSort')">Сбросить</button>
+            </div>
+            <div class="col-sm-6 col-md-3 my-1">
+                <button type="button" class="btn btn-light"
+                    onclick="stopSortVisualization('heapSort')">Остановить</button>
+            </div>
+            <div class="col-sm-6 col-md-3 my-1">
+                <button type="button" class="btn btn-light"
+                    onclick="continueSortVisualization('heapSort')">Продолжить</button>
             </div>
         </div>
     </div>
@@ -215,22 +254,29 @@
         <div class="row ">
             <canvas id="mergeSort" class="sortVisualizer"></canvas>
         </div>
-        <div class="row ">
-            <div class="col-6">
-                <button onclick="startSortVisualization('mergeSort')">Начать визуализацию</button>
+        <div class="row">
+            <div class="col-sm-6 col-md-3 my-1">
+                <button type="button" class="btn btn-light" onclick="startSortVisualization('mergeSort')">Начать
+                    визуализацию</button>
             </div>
-            <div class="col-6">
-                <button onclick="resetSortVisualization('mergeSort')">Сбросить</button>
+            <div class="col-sm-6 col-md-3 my-1">
+                <button type="button" class="btn btn-light"
+                    onclick="resetSortVisualization('mergeSort')">Сбросить</button>
+            </div>
+            <div class="col-sm-6 col-md-3 my-1">
+                <button type="button" class="btn btn-light"
+                    onclick="stopSortVisualization('mergeSort')">Остановить</button>
+            </div>
+            <div class="col-sm-6 col-md-3 my-1">
+                <button type="button" class="btn btn-light"
+                    onclick="continueSortVisualization('mergeSort')">Продолжить</button>
             </div>
         </div>
     </div>
-
-    <!-- <br> TEMP!! -->
-    <br>
     <a name="contacts"></a>
     <div class="container-fluid">
 
-        <div class="row justify-content-center bg-dark">
+        <div class="row justify-content-around bg-dark">
             <h1 class="title-square col-5 ">Контакты</h1>
         </div>
 
