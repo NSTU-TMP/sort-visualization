@@ -8,6 +8,11 @@
     border-radius: 10px;
 }
 
+
+.container-fluid {
+    margin-top: 0.5%;
+}
+
 .square-brand {
     background-color: rgb(81, 83, 190);
     color: white;
@@ -16,12 +21,26 @@
     border-radius: 7px;
 }
 
+.title-square {
+    background-color: rgb(81, 126, 190);
+    padding: 3px;
+    font-weight: 630;
+    border-radius: 7px;
+    border-radius: 1vw;
+    color: white;
+}
+
+
 .square-brand:hover {
     color: rgb(220, 215, 248);
 }
 
 .bg-dark {
     background-color: rgb(55, 60, 66);
+}
+
+.title-bg {
+    background-color: rgb(42, 43, 69);
 }
 
 .bg-grey {
@@ -52,16 +71,15 @@
 
 
 
-.title-square {
-    border-radius: 1vw;
-    color: white;
-}
 
+
+.navbar-brand,
 .nav-link {
     color: white;
     font-weight: 500;
     font-size: 120%;
 }
+
 
 @media screen and (max-width: 550px) {
     .text-icon {
