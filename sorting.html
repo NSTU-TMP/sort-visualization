@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    
     <meta charset="utf-8" />
-    <title>Визуализация сортировок</title>
+    <title>Sortify!</title>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
     <meta
@@ -46,12 +48,24 @@
       integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
       crossorigin="anonymous"
     ></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+      body {
+        font-family: 'Ubuntu', sans-serif;
+      }
+    </style>
   </head>
 </html>
 
 <body class="bg-grey">
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand square-brand" href="index.html">АВТ-113</a>
+    <a class="navbar-brand square-brand" href="index.html"><svg 
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      width="80px" height="27px">
+     <path fill-rule="evenodd"  fill="rgb(250, 250, 250)"
+      d="M77.40,14.978 L73.512,14.978 L76.250,2.53 L79.778,2.53 L77.40,14.978 ZM67.13,20.626 L65.122,23.611 C64.644,24.317 64.77,24.934 63.423,25.461 C62.769,25.987 62.88,26.406 61.381,26.718 L60.858,23.364 C61.173,23.199 61.467,23.10 61.743,22.797 C62.18,22.583 62.251,22.336 62.442,22.57 L63.485,20.626 L60.765,10.415 L61.293,7.923 L64.6,7.923 L66.151,16.310 L71.874,7.923 L74.588,7.923 L74.60,10.415 L67.13,20.626 ZM60.52,11.450 L57.92,11.450 L55.149,20.626 L51.621,20.626 L53.565,11.450 L50.704,11.450 L51.451,7.923 L54.312,7.923 L54.375,7.627 C54.542,6.838 54.827,6.94 55.230,5.395 C55.633,4.696 57.386,1.78 58.892,0.659 L59.690,4.48 C58.400,4.558 58.44,7.35 57.902,7.627 L57.840,7.923 L60.800,7.923 L60.52,11.450 ZM50.739,6.628 C50.319,6.982 49.845,7.159 49.319,7.159 C48.793,7.159 48.391,6.982 48.112,6.628 C47.833,6.275 47.750,5.835 47.861,5.309 C47.973,4.783 48.242,4.347 48.669,4.1 C49.95,3.656 49.571,3.483 50.98,3.483 C50.624,3.483 51.23,3.656 51.295,4.1 C51.568,4.347 51.648,4.783 51.537,5.309 C51.425,5.835 51.159,6.275 50.739,6.628 ZM48.218,20.626 L44.690,20.626 L47.381,7.923 L50.909,7.923 L48.218,20.626 ZM46.92,11.450 L43.132,11.450 L41.188,20.626 L37.661,20.626 L39.605,11.450 L36.743,11.450 L37.491,7.923 L40.352,7.923 L41.292,3.483 L44.819,3.483 L43.879,7.923 L46.839,7.923 L46.92,11.450 ZM33.377,12.30 C32.558,12.597 32.37,13.292 31.813,14.114 L30.434,20.626 L26.906,20.626 L29.598,7.923 L33.125,7.923 L32.921,8.885 C33.344,8.441 33.882,8.113 34.536,7.899 C35.189,7.685 36.18,7.578 37.21,7.578 L36.263,11.154 C35.158,11.171 34.196,11.463 33.377,12.30 ZM26.715,16.815 C26.205,17.629 25.587,18.336 24.860,18.936 C24.132,19.537 23.327,20.18 22.445,20.379 C21.562,20.741 20.661,20.922 19.740,20.922 C18.819,20.922 17.988,20.749 17.248,20.404 C16.507,20.59 15.895,19.586 15.414,18.986 C14.933,18.386 14.601,17.683 14.418,16.877 C14.235,16.71 14.242,15.208 14.437,14.287 C14.632,13.366 14.984,12.499 15.494,11.685 C16.3,10.871 16.621,10.164 17.349,9.564 C18.76,8.963 18.885,8.483 19.776,8.121 C20.666,7.759 21.572,7.578 22.493,7.578 C23.414,7.578 24.245,7.751 24.986,8.96 C25.726,8.441 26.333,8.914 26.806,9.514 C27.279,10.115 27.607,10.818 27.790,11.623 C27.973,12.429 27.967,13.292 27.772,14.213 C27.577,15.134 27.224,16.1 26.715,16.815 ZM24.244,13.54 C24.159,12.676 24.0,12.338 23.767,12.42 C23.267,11.450 22.590,11.154 21.735,11.154 C20.880,11.154 20.84,11.459 19.347,12.67 C18.602,12.708 18.142,13.448 17.964,14.287 C17.783,15.142 17.938,15.882 18.431,16.507 C18.910,17.115 19.586,17.420 20.457,17.420 C20.888,17.403 21.309,17.317 21.721,17.161 C22.132,17.4 22.509,16.778 22.851,16.482 C23.588,15.874 24.49,15.134 24.234,14.262 C24.325,13.835 24.328,13.432 24.244,13.54 ZM21.182,6.419 C21.92,6.584 20.979,6.721 20.843,6.831 C20.708,6.941 20.554,7.23 20.383,7.78 C20.213,7.132 20.29,7.159 19.833,7.159 C19.638,7.159 19.460,7.134 19.302,7.83 C19.144,7.32 19.11,6.954 18.903,6.847 C18.795,6.740 18.719,6.604 18.675,6.438 C18.630,6.272 18.625,6.75 18.660,5.848 L19.19,3.508 L19.769,3.508 L19.409,5.858 C19.399,5.925 19.403,5.990 19.423,6.55 C19.443,6.120 19.477,6.177 19.525,6.228 C19.573,6.279 19.632,6.321 19.702,6.354 C19.773,6.387 19.853,6.404 19.944,6.404 C20.45,6.404 20.137,6.383 20.218,6.341 C20.300,6.299 20.369,6.249 20.425,6.191 C20.481,6.134 20.525,6.74 20.557,6.13 C20.589,5.952 20.608,5.904 20.613,5.869 L20.975,3.508 L21.725,3.508 L21.367,5.848 C21.333,6.65 21.272,6.255 21.182,6.419 ZM17.844,4.264 L17.400,7.159 L16.650,7.159 L17.94,4.264 L16.97,4.264 L16.212,3.514 L18.919,3.514 L18.804,4.264 L17.844,4.264 ZM14.985,4.453 C15.10,4.460 15.47,4.463 15.96,4.463 L15.348,4.463 L15.505,4.463 C15.722,4.463 15.908,4.496 16.62,4.563 C16.216,4.629 16.339,4.722 16.431,4.841 C16.523,4.960 16.583,5.101 16.612,5.266 C16.641,5.430 16.641,5.610 16.611,5.806 L16.610,5.811 L16.609,5.816 C16.579,6.12 16.524,6.192 16.445,6.356 C16.366,6.521 16.262,6.662 16.133,6.781 C16.5,6.900 15.854,6.993 15.679,7.59 C15.504,7.126 15.309,7.159 15.92,7.159 L13.707,7.159 L13.823,6.404 L14.568,6.404 L14.626,6.404 L15.229,6.404 C15.264,6.404 15.314,6.392 15.378,6.370 C15.443,6.347 15.508,6.311 15.573,6.262 C15.638,6.213 15.698,6.152 15.751,6.78 C15.804,6.5 15.839,5.916 15.855,5.811 C15.870,5.710 15.863,5.621 15.832,5.546 C15.802,5.471 15.762,5.409 15.711,5.360 C15.661,5.311 15.607,5.275 15.550,5.252 C15.492,5.230 15.446,5.218 15.411,5.218 L15.390,5.218 L14.986,5.218 C14.720,5.218 14.506,5.156 14.343,5.32 C14.180,4.908 14.106,4.720 14.120,4.468 L14.130,4.369 C14.151,4.229 14.196,4.105 14.263,3.996 C14.330,3.888 14.413,3.799 14.511,3.729 C14.609,3.659 14.722,3.606 14.848,3.569 C14.974,3.532 15.107,3.514 15.247,3.514 L15.651,3.514 L15.535,4.269 L15.378,4.269 L15.126,4.269 C15.35,4.269 14.978,4.279 14.956,4.300 C14.934,4.321 14.921,4.344 14.917,4.369 C14.916,4.376 14.915,4.384 14.915,4.395 C14.915,4.405 14.921,4.416 14.932,4.426 C14.942,4.437 14.960,4.446 14.985,4.453 ZM12.863,7.159 L11.111,4.662 L10.728,7.159 L9.978,7.159 L10.537,3.514 L11.287,3.514 L13.39,6.10 L13.422,3.514 L14.172,3.514 L13.613,7.159 L12.863,7.159 ZM8.795,7.35 L7.611,7.35 C7.184,7.35 6.914,7.85 6.803,7.183 C6.692,7.282 6.624,7.389 6.599,7.504 C6.592,7.537 6.588,7.578 6.586,7.627 C6.583,7.677 6.606,7.726 6.653,7.775 C6.700,7.825 6.782,7.866 6.898,7.899 C7.14,7.932 7.188,7.948 7.418,7.948 L8.602,7.948 L9.342,7.948 C10.361,7.948 11.224,8.104 11.931,8.417 C12.638,8.729 13.191,9.165 13.590,9.724 C13.990,10.283 14.235,10.949 14.326,11.722 C14.417,12.495 14.366,13.342 14.171,14.262 L14.165,14.287 L14.160,14.312 C13.965,15.233 13.658,16.79 13.240,16.852 C12.821,17.625 12.293,18.291 11.657,18.850 C11.21,19.409 10.283,19.845 9.444,20.157 C8.605,20.470 7.675,20.626 6.656,20.626 L0.144,20.626 L0.897,17.74 L4.399,17.74 L4.671,17.74 L7.507,17.74 C7.671,17.74 7.909,17.21 8.219,16.914 C8.530,16.807 8.845,16.639 9.165,16.408 C9.485,16.178 9.781,15.890 10.51,15.545 C10.322,15.200 10.509,14.780 10.614,14.287 C10.715,13.810 10.704,13.395 10.581,13.41 C10.459,12.688 10.286,12.396 10.64,12.166 C9.841,11.936 9.597,11.767 9.332,11.660 C9.67,11.553 8.852,11.500 8.688,11.500 L8.589,11.500 L6.690,11.500 C5.440,11.500 4.450,11.208 3.719,10.624 C2.987,10.41 2.689,9.157 2.825,7.973 L2.900,7.504 C3.39,6.846 3.282,6.263 3.628,5.753 C3.974,5.243 4.388,4.824 4.869,4.495 C5.350,4.166 5.892,3.915 6.496,3.742 C7.100,3.570 7.731,3.483 8.388,3.483 L10.288,3.483 L9.535,7.35 L8.795,7.35 ZM76.590,17.99 L75.843,20.626 L72.316,20.626 L73.63,17.99 L76.590,17.99 Z"/>
+     </svg></a>
     <button
       class="navbar-toggler"
       type="button"
@@ -80,50 +94,40 @@
     </div>
   </nav>
 
-  <div id="sorting" class=" container-fluid">
-    <div class="row">
-        <div class="col-4"></div>
-        <h1 class="title-square text-center col-4">Запустить все сортировки</h1>
-    </div>
+  <div class="row" id="sorting">
+    <h1 class="title-square-fill text-center">Управление сортировками</h1>
 </div>
-<div class="container-fluid">
-    <div class="row justify-content-between align-items-center">
-        <div class="col-sm-4 col-md-2 my-1">
-            <button type="button" class="btn btn-light" onclick="startAllSortVisualization()">Начать
-                визуализацию</button>
+<div class="">
+    <div class="row control-buttons-main  ">
+        <div class="col-sm-4-main  ">
+            <button type="button" class="btn btn-light styled-text" onclick="startAllSortVisualization()">Начать</button>
         </div>
-        <div class="col-sm-4 col-md-3 my-1">
-            <button type="button" class="btn btn-light" onclick="resetAllAndFillSameData()">Перезаполнить
-                одинаковыми данными</button>
+        <div class="col-sm-4-main ">
+            <button type="button" class="btn btn-light styled-text" onclick="resetAllAndFillSameData()">Сбросить</button>
         </div>
-        <div class="col-sm-4 col-md-2 my-1">
-            <button type="button" class="btn btn-light" onclick="stopAllSortVisualization()">Остановить</button>
+        <div class="col-sm-4-main  ">
+            <button type="button" class="btn btn-light styled-text" onclick="stopAllSortVisualization()">Остановить</button>
         </div>
-        <div class="col-sm-4 col-md-2 my-1">
-            <button type="button" class="btn btn-light" onclick="continueAllSortVisualization()">Продолжить</button>
-        </div>
-        <div class="col-sm-4 col-md-2 my-1">
-            <input type="number" id="inputSpeed" class="from-control" placeholder="Введите задержку в мс">  </input>
+        
+        <div class="col-sm-4-main ">
+            <input type="number" id="inputSpeed" class="from-control styled-text" placeholder="Задержка (мс)">  </input>
         </div>
     </div>
 </div>
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-4"></div>
-        <h1 class="title-square text-center col-4">Визуализация сортировок</h1>
+        <h1 class="title-square-fill text-center">Визуализация сортировок</h1>
     </div>
 </div>
 
-<div class="accordion">
+<div class="accordion text-center">
     <div class="card">
-    <div class="card-header">
-        <h2 class="mb-0">
-        <button class="btn btn-link btn-block text-center" type="button" data-toggle="collapse" data-target="#accordion-item1" style="font-size: 24px;">
-            Сортировка пузырьком.
+      <div class="card-header btn btn-link btn-block text-center" data-toggle="collapse" data-target="#accordion-item1">
+        <button class="btn btn-link" type="button" style="font-size: 24px;">
+          Сортировка пузырьком.
         </button>
-        </h2>
-    </div>
+      </div>
     <div id="accordion-item1" class="collapse">
         <div class="card-body">
             <a name="bubbleSort"></a>
@@ -133,8 +137,7 @@
                 </div>
                 <div class="row ">
                     <div class="col-sm-4 col-md-2 my-1">
-                        <button type="button" class="btn btn-light" onclick="startSortVisualization('bubbleSort')">Начать
-                            визуализацию</button>
+                        <button type="button" class="btn btn-light" onclick="startSortVisualization('bubbleSort')">Начать</button>
                     </div>
                     <div class="col-sm-4 col-md-2 my-1">
                         <button type="button" class="btn btn-light"
@@ -144,13 +147,10 @@
                         <button type="button" class="btn btn-light"
                             onclick="stopSortVisualization('bubbleSort')">Остановить</button>
                     </div>
-                    <div class="col-sm-4 col-md-2 my-1">
-                        <button type="button" class="btn btn-light"
-                            onclick="continueSortVisualization('bubbleSort')">Продолжить</button>
-                    </div>
+                    
 
                     <div class="col-sm-4 col-md-2 my-1">
-                        <input type="number" id="inputSpeedbubbleSort" class="from-control" placeholder="Введите задержку в мс">  </input>
+                        <input type="number" id="inputSpeedbubbleSort" class="from-control" placeholder="Задержка (мс)">  </input>
                     </div>
                 </div>
 
@@ -159,10 +159,9 @@
     </div>
     </div>
     <div class="card">
-        <div class="card-header">
-            <h2 class="mb-0">
-            <button class="btn btn-link btn-block text-left" style="font-size: 24px;" type="button" data-toggle="collapse" data-target="#accordion-item2">
-                Быстрая сортировка.
+      <div class="card-header btn btn-link btn-block text-center" data-toggle="collapse" data-target="#accordion-item2" style="font-size: 24px;">
+        <button class="btn btn-link" type="button" style="font-size: 24px;">
+          Быстрая сортировка.
             </button>
             </h2>
         </div>
@@ -175,8 +174,7 @@
                     </div>
                     <div class="row ">
                         <div class="col-sm-4 col-md-2 my-1">
-                            <button type="button" class="btn btn-light" onclick="startSortVisualization('quickSort')">Начать
-                                визуализацию</button>
+                            <button type="button" class="btn btn-light" onclick="startSortVisualization('quickSort')">Начать</button>
                         </div>
                         <div class="col-sm-4 col-md-2 my-1">
                             <button type="button" class="btn btn-light"
@@ -186,12 +184,9 @@
                             <button type="button" class="btn btn-light"
                                 onclick="stopSortVisualization('quickSort')">Остановить</button>
                         </div>
+                        
                         <div class="col-sm-4 col-md-2 my-1">
-                            <button type="button" class="btn btn-light"
-                                onclick="continueSortVisualization('quickSort')">Продолжить</button>
-                        </div>
-                        <div class="col-sm-4 col-md-2 my-1">
-                            <input type="number" id="inputSpeedquickSort" class="from-control" placeholder="Введите задержку в мс">  </input>
+                            <input type="number" id="inputSpeedquickSort" class="from-control" placeholder="Задержка (мс)">  </input>
                         </div>
                     </div>
             
@@ -201,10 +196,9 @@
     </div>
 
     <div class="card">
-        <div class="card-header">
-          <h2 class="mb-0">
-            <button class="btn btn-link btn-block text-left" style="font-size: 24px;" type="button" data-toggle="collapse" data-target="#accordion-item3">
-              Сортировка кучей.
+      <div class="card-header btn btn-link btn-block text-center" data-toggle="collapse" data-target="#accordion-item3" style="font-size: 24px;">
+        <button class="btn btn-link" type="button" style="font-size: 24px;">
+          Сортировка кучей.
             </button>
           </h2>
         </div>
@@ -217,8 +211,7 @@
                     </div>
                     <div class="row ">
                         <div class="col-sm-4 col-md-2 my-1">
-                            <button type="button" class="btn btn-light" onclick="startSortVisualization('heapSort')">Начать
-                                визуализацию</button>
+                            <button type="button" class="btn btn-light" onclick="startSortVisualization('heapSort')">Начать</button>
                         </div>
                         <div class="col-sm-4 col-md-2 my-1">
                             <button type="button" class="btn btn-light"
@@ -228,12 +221,9 @@
                             <button type="button" class="btn btn-light"
                                 onclick="stopSortVisualization('heapSort')">Остановить</button>
                         </div>
+                        
                         <div class="col-sm-4 col-md-2 my-1">
-                            <button type="button" class="btn btn-light"
-                                onclick="continueSortVisualization('heapSort')">Продолжить</button>
-                        </div>
-                        <div class="col-sm-4 col-md-2 my-1">
-                            <input type="number" id="inputSpeedheapSort" class="from-control" placeholder="Введите задержку в мс">  </input>
+                            <input type="number" id="inputSpeedheapSort" class="from-control" placeholder="Задержка (мс)">  </input>
                         </div>
                     </div> 
                 </div>
@@ -241,10 +231,9 @@
         </div>
       </div>
       <div class="card">
-        <div class="card-header">
-          <h2 class="mb-0">
-            <button class="btn btn-link btn-block text-left" style="font-size: 24px;" type="button" data-toggle="collapse" data-target="#accordion-item4">
-              Сортировка слиянием.
+        <div class="card-header btn btn-link btn-block text-center" data-toggle="collapse" data-target="#accordion-item4" style="font-size: 24px;">
+          <button class="btn btn-link" type="button" style="font-size: 24px;">
+            Сортировка слиянием.
             </button>
           </h2>
         </div>
@@ -257,8 +246,7 @@
                 </div>
                 <div class="row">
                     <div class="col-sm-4 col-md-2 my-1">
-                        <button type="button" class="btn btn-light" onclick="startSortVisualization('mergeSort')">Начать
-                            визуализацию</button>
+                        <button type="button" class="btn btn-light" onclick="startSortVisualization('mergeSort')">Начать</button>
                     </div>
                     <div class="col-sm-4 col-md-2 my-1">
                         <button type="button" class="btn btn-light"
@@ -268,12 +256,9 @@
                         <button type="button" class="btn btn-light"
                             onclick="stopSortVisualization('mergeSort')">Остановить</button>
                     </div>
+                    
                     <div class="col-sm-4 col-md-2 my-1">
-                        <button type="button" class="btn btn-light"
-                            onclick="continueSortVisualization('mergeSort')">Продолжить</button>
-                    </div>
-                    <div class="col-sm-4 col-md-2 my-1">
-                        <input type="number" id="inputSpeedmergeSort" class="from-control" placeholder="Введите задержку в мс">  </input>
+                        <input type="number" id="inputSpeedmergeSort" class="from-control" placeholder="Задержка (мс)">  </input>
                     </div>
                 </div>
             </div> 
@@ -281,4 +266,40 @@
         </div>
       </div>
 </div>
+<style>
+  .row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+
+  .row .col-sm-4 {
+      flex: 1;
+      max-width: 170px;
+      margin: 0 15px;
+  }
+
+  .row .col-sm-4-main {
+      flex: 1;
+      margin: 0 3px;
+      padding-left: 25px;
+      padding-right: 25px;
+  }
+
+  .btn {
+      border-radius: 25px;
+      padding-left: 25px;
+      padding-right: 25px;
+  }
+
+  input[type="number"] {
+      border-radius: 25px;
+      padding: 0.5rem;
+      max-width: 100%;
+      width: 100%;
+      box-sizing: border-box;
+  }
+</style>
+
+
 </body>
