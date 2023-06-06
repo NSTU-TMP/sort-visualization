@@ -68,19 +68,19 @@
     <div class="block-about container-fluid">
         <br />
         <div class="row">
-            <h1 class=" title-square col-7" style="background-color: rgba(124, 163, 187, 0.8);">Расчетное графическое
+            <h1 class=" title-square" style="width: auto; background-color: rgba(124, 163, 187, 0.8);">Расчетное графическое
                 задание
             </h1>
 
         </div>
         <div class="row">
-            <h3 class=" title-square col-10" style="background-color: rgba(174, 178, 245, 0.8);">Визуализация сортировок
+            <h3 class=" title-square col-10" style="width: auto; background-color: rgba(174, 178, 245, 0.8);">Визуализация сортировок
             </h3>
         </div>
 
 
         <div class="row">
-            <div class=" title-square col-md-8" style="background-color: rgba(81, 96, 109, 0.8); ">
+            <div class=" title-square col-md-8" style="width: auto; background-color: rgba(81, 96, 109, 0.8); ">
                 <h3 style="padding: 2px;">
                     Выполнили студенты группы АВТ-113
                     <br>
@@ -167,6 +167,9 @@
             <div class="col-sm-6 col-md-3 my-1">
                 <button type="button" class="btn btn-light" onclick="continueAllSortVisualization()">Продолжить</button>
             </div>
+            <div class="col-sm-6 col-md-3 my-1">
+                <input type="number" id="inputSpeed" class="from-control" placeholder="Введите задержку в мс">  </input>
+            </div>
         </div>
     </div>
 
@@ -197,6 +200,10 @@
                 <button type="button" class="btn btn-light"
                     onclick="continueSortVisualization('bubbleSort')">Продолжить</button>
             </div>
+        </div>
+
+        <div class="row">
+            <input type="number" id="inputSpeedbubbleSort" class="from-control" placeholder="Введите задержку в мс">  </input>
         </div>
     </div>
     <!-- <div class="container-fluid">
@@ -237,6 +244,10 @@
                     onclick="continueSortVisualization('quickSort')">Продолжить</button>
             </div>
         </div>
+
+        <div class="row">
+            <input type="number" id="inputSpeedquickSort" class="from-control" placeholder="Введите задержку в мс">  </input>
+        </div>
     </div>
 
 
@@ -267,6 +278,10 @@
                     onclick="continueSortVisualization('heapSort')">Продолжить</button>
             </div>
         </div>
+
+        <div class="row">
+            <input type="number" id="inputSpeedheapSort" class="from-control" placeholder="Введите задержку в мс">  </input>
+        </div>
     </div>
 
     <a name="mergeSort"></a>
@@ -295,6 +310,10 @@
                 <button type="button" class="btn btn-light"
                     onclick="continueSortVisualization('mergeSort')">Продолжить</button>
             </div>
+        </div>
+
+        <div class="row">
+            <input type="number" id="inputSpeedmergeSort" class="from-control" placeholder="Введите задержку в мс">  </input>
         </div>
     </div>
     <a name="contacts"></a>

@@ -111,6 +111,12 @@ function findCanvasIndexByParentId(canvas_parent_id) {
 function startSortVisualization(canvas_parent_id) {
     let index = this.findCanvasIndexByParentId(canvas_parent_id);
     if (index >= 0) {
+        let speed = document.getElementById("inputSpeed" + canvas_parent_id).value;
+
+        if (speed != null) {
+            canvasArray[index].setDelay(speed);
+        } 
+
         canvasArray[index].sortAndDraw();
     }
 }
@@ -132,6 +138,12 @@ function stopSortVisualization(canvas_parent_id) {
 function continueSortVisualization(canvas_parent_id) {
     let index = this.findCanvasIndexByParentId(canvas_parent_id);
     if (index >= 0) {
+        let speed = document.getElementById("inputSpeed" + canvas_parent_id).value;
+
+        if (speed != null) {
+            canvasArray[index].setDelay(speed);
+        } 
+
         canvasArray[index].continueSortVisualization();
     }
 }
@@ -152,6 +164,12 @@ function generateArray(size, maxHeight) {
 
 function startAllSortVisualization() {
     for (let i = 0; i < canvasArray.length; i++) {
+        let speed = document.getElementById("inputSpeed").value;
+
+        if (speed != null) {
+            canvasArray[i].setDelay(speed);
+        }
+        
         canvasArray[i].sortAndDraw();
     }
 }
@@ -169,6 +187,12 @@ function stopAllSortVisualization() {
 }
 function continueAllSortVisualization() {
     for (let i = 0; i < canvasArray.length; i++) {
+        let speed = document.getElementById("inputSpeed").value;
+
+        if (speed != null) {
+            canvasArray[i].setDelay(speed);
+        }
+        
         canvasArray[i].continueSortVisualization();
     }
 }
