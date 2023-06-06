@@ -163,13 +163,15 @@ function generateArray(size, maxHeight) {
 }
 
 function startAllSortVisualization() {
+    openAllAccordions();
+    
     for (let i = 0; i < canvasArray.length; i++) {
         let speed = document.getElementById("inputSpeed").value;
 
         if (speed != null) {
             canvasArray[i].setDelay(speed);
         }
-        
+
         canvasArray[i].sortAndDraw();
     }
 }
@@ -185,6 +187,7 @@ function stopAllSortVisualization() {
         canvasArray[i].stopSortVisualization();
     }
 }
+
 function continueAllSortVisualization() {
     for (let i = 0; i < canvasArray.length; i++) {
         let speed = document.getElementById("inputSpeed").value;
@@ -195,4 +198,16 @@ function continueAllSortVisualization() {
         
         canvasArray[i].continueSortVisualization();
     }
+}
+
+function openAllAccordions() {
+    var accordionElement1 = document.querySelector("#" + "accordion-item1");
+    var accordionElement2 = document.querySelector("#" + "accordion-item2");
+    var accordionElement3 = document.querySelector("#" + "accordion-item3");
+    var accordionElement4 = document.querySelector("#" + "accordion-item4");
+    
+    accordionElement1.classList.add("show");
+    accordionElement2.classList.add("show");
+    accordionElement3.classList.add("show");
+    accordionElement4.classList.add("show");
 }
