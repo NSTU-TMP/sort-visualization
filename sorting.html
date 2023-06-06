@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Визуализация сортировок</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <script src="js/script.js"></script>
+    <script src="js/bubbleSort.js"></script>
+    <script src="js/quickSort.js"></script>
+    <script src="js/heapSort.js"></script>
+    <script src="js/mergeSort.js"></script>
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.3.js"
+      integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+</html>
+
+<body class="bg-grey">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">АВТ-113</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+            <a class="nav-link" href="index.html">Главная</a>
+          </li>
+        <li class="nav-item">
+          <a class="nav-link" href="about.html"
+            >О задании<span class="sr-only"></span
+          ></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="sorting.html">Сортировки</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contacts.html">Контакты</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div id="sorting" class="bg-dark container-fluid">
+    <div class="row">
+        <div class="col-4"></div>
+        <h1 class="title-square text-center col-4">Запустить все сортировки</h1>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row justify-content-between align-items-center">
+        <div class="col-sm-4 col-md-2 my-1">
+            <button type="button" class="btn btn-light" onclick="startAllSortVisualization()">Начать
+                визуализацию</button>
+        </div>
+        <div class="col-sm-4 col-md-3 my-1">
+            <button type="button" class="btn btn-light" onclick="resetAllAndFillSameData()">Перезаполнить
+                одинаковыми данными</button>
+        </div>
+        <div class="col-sm-4 col-md-2 my-1">
+            <button type="button" class="btn btn-light" onclick="stopAllSortVisualization()">Остановить</button>
+        </div>
+        <div class="col-sm-4 col-md-2 my-1">
+            <button type="button" class="btn btn-light" onclick="continueAllSortVisualization()">Продолжить</button>
+        </div>
+        <div class="col-sm-4 col-md-2 my-1">
+            <input type="number" id="inputSpeed" class="from-control" placeholder="Введите задержку в мс">  </input>
+        </div>
+    </div>
+</div>
+
+<div class="bg-dark container-fluid">
+    <div class="row">
+        <div class="col-4"></div>
+        <h1 class="title-square text-center col-4">Визуализация сортировок</h1>
+    </div>
+</div>
+
+<div class="accordion">
+    <div class="card">
+    <div class="card-header">
+        <h2 class="mb-0">
+        <button class="btn btn-link btn-block text-center" type="button" data-toggle="collapse" data-target="#accordion-item1" style="font-size: 24px;">
+            Сортировка пузырьком.
+        </button>
+        </h2>
+    </div>
+    <div id="accordion-item1" class="collapse">
+        <div class="card-body">
+            <a name="bubbleSort"></a>
+            <div class="bg-dark container-fluid">
+                <div class="row ">
+                    <canvas id="bubbleSort" class="sortVisualizer"></canvas>
+                </div>
+                <div class="row ">
+                    <div class="col-sm-4 col-md-2 my-1">
+                        <button type="button" class="btn btn-light" onclick="startSortVisualization('bubbleSort')">Начать
+                            визуализацию</button>
+                    </div>
+                    <div class="col-sm-4 col-md-2 my-1">
+                        <button type="button" class="btn btn-light"
+                            onclick="resetSortVisualization('bubbleSort')">Сбросить</button>
+                    </div>
+                    <div class="col-sm-4 col-md-2 my-1">
+                        <button type="button" class="btn btn-light"
+                            onclick="stopSortVisualization('bubbleSort')">Остановить</button>
+                    </div>
+                    <div class="col-sm-4 col-md-2 my-1">
+                        <button type="button" class="btn btn-light"
+                            onclick="continueSortVisualization('bubbleSort')">Продолжить</button>
+                    </div>
+
+                    <div class="col-sm-4 col-md-2 my-1">
+                        <input type="number" id="inputSpeedbubbleSort" class="from-control" placeholder="Введите задержку в мс">  </input>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            <h2 class="mb-0">
+            <button class="btn btn-link btn-block text-left" style="font-size: 24px;" type="button" data-toggle="collapse" data-target="#accordion-item2">
+                Быстрая сортировка.
+            </button>
+            </h2>
+        </div>
+        <div id="accordion-item2" class="collapse">
+            <div class="card-body">
+                <a name="quickSort"></a>
+                <div class="bg-dark container-fluid">
+                    <div class="row ">
+                        <canvas id="quickSort" class="sortVisualizer"></canvas>
+                    </div>
+                    <div class="row ">
+                        <div class="col-sm-4 col-md-2 my-1">
+                            <button type="button" class="btn btn-light" onclick="startSortVisualization('quickSort')">Начать
+                                визуализацию</button>
+                        </div>
+                        <div class="col-sm-4 col-md-2 my-1">
+                            <button type="button" class="btn btn-light"
+                                onclick="resetSortVisualization('quickSort')">Сбросить</button>
+                        </div>
+                        <div class="col-sm-4 col-md-2 my-1">
+                            <button type="button" class="btn btn-light"
+                                onclick="stopSortVisualization('quickSort')">Остановить</button>
+                        </div>
+                        <div class="col-sm-4 col-md-2 my-1">
+                            <button type="button" class="btn btn-light"
+                                onclick="continueSortVisualization('quickSort')">Продолжить</button>
+                        </div>
+                        <div class="col-sm-4 col-md-2 my-1">
+                            <input type="number" id="inputSpeedquickSort" class="from-control" placeholder="Введите задержку в мс">  </input>
+                        </div>
+                    </div>
+            
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+          <h2 class="mb-0">
+            <button class="btn btn-link btn-block text-left" style="font-size: 24px;" type="button" data-toggle="collapse" data-target="#accordion-item3">
+              Сортировка кучей.
+            </button>
+          </h2>
+        </div>
+        <div id="accordion-item3" class="collapse">
+          <div class="card-body">
+            <a name="heapSort"></a>
+                <div class="bg-dark container-fluid">
+                    <div class="row ">
+                        <canvas id="heapSort" class="sortVisualizer"></canvas>
+                    </div>
+                    <div class="row ">
+                        <div class="col-sm-4 col-md-2 my-1">
+                            <button type="button" class="btn btn-light" onclick="startSortVisualization('heapSort')">Начать
+                                визуализацию</button>
+                        </div>
+                        <div class="col-sm-4 col-md-2 my-1">
+                            <button type="button" class="btn btn-light"
+                                onclick="resetSortVisualization('heapSort')">Сбросить</button>
+                        </div>
+                        <div class="col-sm-4 col-md-2 my-1">
+                            <button type="button" class="btn btn-light"
+                                onclick="stopSortVisualization('heapSort')">Остановить</button>
+                        </div>
+                        <div class="col-sm-4 col-md-2 my-1">
+                            <button type="button" class="btn btn-light"
+                                onclick="continueSortVisualization('heapSort')">Продолжить</button>
+                        </div>
+                        <div class="col-sm-4 col-md-2 my-1">
+                            <input type="number" id="inputSpeedheapSort" class="from-control" placeholder="Введите задержку в мс">  </input>
+                        </div>
+                    </div> 
+                </div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h2 class="mb-0">
+            <button class="btn btn-link btn-block text-left" style="font-size: 24px;" type="button" data-toggle="collapse" data-target="#accordion-item4">
+              Сортировка слиянием.
+            </button>
+          </h2>
+        </div>
+        <div id="accordion-item4" class="collapse">
+          <div class="card-body">
+            <a name="mergeSort"></a>
+            <div class="bg-dark container-fluid">
+                <div class="row ">
+                    <canvas id="mergeSort" class="sortVisualizer"></canvas>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4 col-md-2 my-1">
+                        <button type="button" class="btn btn-light" onclick="startSortVisualization('mergeSort')">Начать
+                            визуализацию</button>
+                    </div>
+                    <div class="col-sm-4 col-md-2 my-1">
+                        <button type="button" class="btn btn-light"
+                            onclick="resetSortVisualization('mergeSort')">Сбросить</button>
+                    </div>
+                    <div class="col-sm-4 col-md-2 my-1">
+                        <button type="button" class="btn btn-light"
+                            onclick="stopSortVisualization('mergeSort')">Остановить</button>
+                    </div>
+                    <div class="col-sm-4 col-md-2 my-1">
+                        <button type="button" class="btn btn-light"
+                            onclick="continueSortVisualization('mergeSort')">Продолжить</button>
+                    </div>
+                    <div class="col-sm-4 col-md-2 my-1">
+                        <input type="number" id="inputSpeedmergeSort" class="from-control" placeholder="Введите задержку в мс">  </input>
+                    </div>
+                </div>
+            </div> 
+          </div>
+        </div>
+      </div>
+</div>
+</body>

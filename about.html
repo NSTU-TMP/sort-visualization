@@ -10,12 +10,6 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
 
-    <script src="js/script.js"></script>
-    <script src="js/bubbleSort.js"></script>
-    <script src="js/quickSort.js"></script>
-    <script src="js/heapSort.js"></script>
-    <script src="js/mergeSort.js"></script>
-
     <script
       src="https://code.jquery.com/jquery-3.6.3.js"
       integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
@@ -82,42 +76,48 @@
       </div>
     </nav>
 
-    <div class="block-about container-fluid">
+    <a name="about"></a>
+    <div class="container-fluid" id="about">
+      <div class="row justify-content-center bg-dark">
+        <div class="col-1"></div>
+        <h1 class="title-square text-center">Что такое сортировка</h1>
+        <div class="col-6"></div>
+      </div>
       <br />
-      <div class="row">
-        <h1
-          class="title-square"
-          style="width: auto; background-color: rgba(124, 163, 187, 0.8)"
-        >
-          Расчетное графическое задание
-        </h1>
-      </div>
-      <div class="row">
-        <h3
-          class="title-square col-10"
-          style="width: auto; background-color: rgba(174, 178, 245, 0.8)"
-        >
-          Визуализация сортировок
-        </h3>
-      </div>
-
-      <div class="row">
-        <div
-          class="title-square col-md-8"
-          style="width: auto; background-color: rgba(81, 96, 109, 0.8)"
-        >
-          <h3 style="padding: 2px">
-            Выполнили студенты группы АВТ-113
-            <br />
-          </h3>
+      <div class="row justify-content-left">
+        <img
+          src="images/about_sort.png"
+          class="col-5"
+          style="max-height: 800px; width: auto"
+        />
+        <div class="col-lg-4 col-12">
           <h5>
-            Хромин Сергей Константинови
             <br />
-            Пронько Артем Вячеславович
-            <br />
-            Чуриков Данил Игоревич
-            <br />
-            Кашаев Аскер Муратович
+            Сортировка - это процесс упорядочивания наборов данных одного типа
+            по возрастанию или убыванию значения какого-либо признака.
+          </h5>
+        </div>
+      </div>
+      <br />
+    </div>
+
+    <div class="bg-dark container-fluid">
+      <div class="col-md-5 col-6"></div>
+      <h1 class="title-square text-center" style="margin-bottom: 0">
+        Как оценить сортировку
+      </h1>
+    </div>
+
+    <a name="Sort"></a>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 col-15">
+          <h3 class="text-center">Время</h3>
+          <h5>
+            — основной параметр, характеризующий быстродействие алгоритма.
+            Называется также вычислительной сложностью. Для упорядочения важны
+            худшее, среднее и лучшее поведение алгоритма в терминах мощности
+            входного множества A.
           </h5>
         </div>
       </div>

@@ -41,7 +41,9 @@
     margin-right: 5%;
 }
 
-
+.btn-link {
+    color: #000000;
+}
 
 .block-about>div {
     margin-left: 3%;
