@@ -1,5 +1,7 @@
-window["mergeSort"] = async function mergeSort(values, drawingCanvas, drawValuesFunc, sleepTimeMS = 50) {
-    let sleepTime = 50;
+window["mergeSort"] = async function mergeSort(values, drawingCanvas, drawValuesFunc, sleepTimeMS) {
+    let sleepTime = 15;
+
+    let is_sort_stopped = false;
 
     if (typeof sleepTimeMS !== "undefined") {
         sleepTime = sleepTimeMS;
@@ -7,6 +9,9 @@ window["mergeSort"] = async function mergeSort(values, drawingCanvas, drawValues
 
     async function merge(arr, left, mid, right) {
 
+        if (is_sort_stopped) {
+            return;
+        }
         const n1 = mid - left + 1;
         const n2 = right - mid;
 
